@@ -99,15 +99,14 @@ public class TransitionEditor : UnityEditor.Editor
         GUI.changed = true;
     }
 
-    // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ShaderUtil.html
     private static bool ShaderHasProperty(Shader shader, string propertyName)
     {
         if (shader == null) return false;
 
-        int propertyCount = ShaderUtil.GetPropertyCount(shader);
+        var propertyCount = shader.GetPropertyCount();
         for (int i = 0; i < propertyCount; i++)
         {
-            if (ShaderUtil.GetPropertyName(shader, i) == propertyName)
+            if (shader.GetPropertyName(i) == propertyName)
             {
                 return true;
             }
