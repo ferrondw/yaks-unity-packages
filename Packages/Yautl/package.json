@@ -1,0 +1,11 @@
+{
+  "name": "com.yakanashe.yautl",
+  "version": "1.0.0",
+  "displayName": "Yautl - Yet Another Unity Tween Library",
+  "description": "Simple tween engine for Unity",
+  "unity": "6000.3",
+  "author": {
+    "name": "Yakanashe",
+    "url": "https://www.fdw.fyi/"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "com.yakanashe.wiper",
+  "version": "1.0.0",
+  "displayName": "Wiper",
+  "description": "Easy scene transition manager",
+  "unity": "6000.3",
+  "author": {
+    "name": "Yakanashe",
+    "url": "https://www.fdw.fyi/"
+  }
+}

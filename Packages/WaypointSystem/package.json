@@ -1,0 +1,11 @@
+{
+  "name": "com.yakanashe.waypointsystem",
+  "version": "1.0.0",
+  "displayName": "Waypoint System",
+  "description": "Simple waypoint system and editor for Unity",
+  "unity": "6000.3",
+  "author": {
+    "name": "Yakanashe",
+    "url": "https://www.fdw.fyi/"
+  }
+}

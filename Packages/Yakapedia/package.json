@@ -1,0 +1,11 @@
+{
+  "name": "com.yakanashe.yakapedia",
+  "version": "1.0.0",
+  "displayName": "Yakapedia",
+  "description": "Yakanashe's utility scripts for Unity",
+  "unity": "6000.3",
+  "author": {
+    "name": "Yakanashe",
+    "url": "https://www.fdw.fyi/"
+  }
+}
