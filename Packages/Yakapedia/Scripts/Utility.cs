@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class Utility
     {
@@ -157,7 +157,7 @@ namespace Yakapedia
                 Directory.CreateDirectory(folderPath);
             }
 
-            string filename = Path.Combine(folderPath, Application.productName + "_Screenshot_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".png");
+            var filename = Path.Combine(folderPath, Application.productName + "_Screenshot_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".png");
             ScreenCapture.CaptureScreenshot(filename, screenSizeMultiplier);
             Debug.Log("Screenshot saved to: " + filename);
         }
@@ -299,7 +299,7 @@ namespace Yakapedia
         /// <returns>The existing or newly added component of the specified type.</returns>
         public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
         {
-            T component = gameObject.GetComponent<T>();
+            var component = gameObject.GetComponent<T>();
             if (component == null)
             {
                 component = gameObject.AddComponent<T>();

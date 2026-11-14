@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class PersistentLogger
     {
@@ -11,7 +11,7 @@ namespace Yakapedia
         {
             get
             {
-                string logDirectory = Path.Combine(Application.persistentDataPath, "Yakapedia", "Logs");
+                var logDirectory = Path.Combine(Application.persistentDataPath, "Yakapedia", "Logs");
                 if (!Directory.Exists(logDirectory))
                 {
                     Directory.CreateDirectory(logDirectory);
@@ -32,7 +32,7 @@ namespace Yakapedia
 
             var logMessage = $"{currentTime} (Scene: {sceneName}, Version: {Application.version}) | {message}";
 
-            using StreamWriter writer = new StreamWriter(LogFilePath, true);
+            using var writer = new StreamWriter(LogFilePath, true);
             writer.WriteLine(logMessage);
             
             Debug.Log($"Message saved | {message}");
@@ -53,10 +53,10 @@ namespace Yakapedia
             }
 
             var logFileNames = Directory.GetFiles(logDirectory, "*.txt");
-            foreach (string fileName in logFileNames)
+            foreach (var fileName in logFileNames)
             {
-                string fileDate = Path.GetFileNameWithoutExtension(fileName);
-                string fileData = File.ReadAllText(fileName);
+                var fileDate = Path.GetFileNameWithoutExtension(fileName);
+                var fileData = File.ReadAllText(fileName);
                 logFiles[fileDate] = fileData;
             }
 

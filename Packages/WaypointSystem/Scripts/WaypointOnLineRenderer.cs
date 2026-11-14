@@ -1,19 +1,22 @@
 using UnityEngine;
 
-[ExecuteAlways, RequireComponent(typeof(LineRenderer), typeof(Waypoint))]
-public class WaypointOnLineRenderer : MonoBehaviour
+namespace Yakanashe.WaypointSystem
 {
-    private LineRenderer _renderer;
-    private Waypoint _waypoint;
-    
-    private void LateUpdate()
+    [ExecuteAlways, RequireComponent(typeof(LineRenderer), typeof(Waypoint))]
+    public class WaypointOnLineRenderer : MonoBehaviour
     {
-        _renderer ??= GetComponent<LineRenderer>();
-        _waypoint ??= GetComponent<Waypoint>();
+        private LineRenderer _renderer;
+        private Waypoint _waypoint;
 
-        if (_waypoint.Points.Count <= 1) return;
-        
-        _renderer.positionCount = _waypoint.Points.Count;
-        _renderer.SetPositions(_waypoint.Points.ToArray());
+        private void LateUpdate()
+        {
+            _renderer ??= GetComponent<LineRenderer>();
+            _waypoint ??= GetComponent<Waypoint>();
+
+            if (_waypoint.Points.Count <= 1) return;
+
+            _renderer.positionCount = _waypoint.Points.Count;
+            _renderer.SetPositions(_waypoint.Points.ToArray());
+        }
     }
 }

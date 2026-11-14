@@ -6,7 +6,7 @@ using UnityEngine;
 using System.IO;
 using System;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class PersistentData
     {

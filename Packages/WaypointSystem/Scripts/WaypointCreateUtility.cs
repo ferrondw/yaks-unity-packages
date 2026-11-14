@@ -4,28 +4,31 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEngine;
 
-public static class WaypointCreateUtility
+namespace Yakanashe.WaypointSystem
 {
-    private const string undoMessage = "Created new waypoint";
-    private const string baseName = "Waypoint";
-
-    [MenuItem("GameObject/Yakapedia/Waypoint")]
-    private static void CreateWaypoint()
+    public static class WaypointCreateUtility
     {
-        var newWaypoint = ObjectFactory.CreateGameObject(baseName, typeof(Waypoint));
+        private const string undoMessage = "Created new waypoint";
+        private const string baseName = "Waypoint";
 
-        var lastView = SceneView.lastActiveSceneView;
-        newWaypoint.transform.position = lastView ? lastView.pivot : Vector3.zero;
+        [MenuItem("GameObject/Yakapedia/Waypoint")]
+        private static void CreateWaypoint()
+        {
+            var newWaypoint = ObjectFactory.CreateGameObject(baseName, typeof(Waypoint));
 
-        StageUtility.PlaceGameObjectInCurrentStage(newWaypoint);
-        GameObjectUtility.EnsureUniqueNameForSibling(newWaypoint);
+            var lastView = SceneView.lastActiveSceneView;
+            newWaypoint.transform.position = lastView ? lastView.pivot : Vector3.zero;
 
-        Undo.RegisterCreatedObjectUndo(newWaypoint, undoMessage);
-        Selection.activeGameObject = newWaypoint;
+            StageUtility.PlaceGameObjectInCurrentStage(newWaypoint);
+            GameObjectUtility.EnsureUniqueNameForSibling(newWaypoint);
 
-        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+            Undo.RegisterCreatedObjectUndo(newWaypoint, undoMessage);
+            Selection.activeGameObject = newWaypoint;
 
-        newWaypoint.GetComponent<Waypoint>().WaypointName = newWaypoint.name;
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+
+            newWaypoint.GetComponent<Waypoint>().WaypointName = newWaypoint.name;
+        }
     }
 }
 #endif

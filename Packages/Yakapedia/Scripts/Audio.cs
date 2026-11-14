@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class Audio
     {
@@ -63,7 +63,7 @@ namespace Yakapedia
                 return;
             }
 
-            int randomIndex = Random.Range(0, clips.Length);
+            var randomIndex = Random.Range(0, clips.Length);
             source.PlayOneShot(clips[randomIndex]);
         }
 
@@ -81,13 +81,13 @@ namespace Yakapedia
                 source.Play();
             }
 
-            float startVolume = source.volume;
-            float startTime = Time.time;
+            var startVolume = source.volume;
+            var startTime = Time.time;
 
             while (Time.time - startTime < duration)
             {
-                float elapsedTime = Time.time - startTime;
-                float t = elapsedTime / duration;
+                var elapsedTime = Time.time - startTime;
+                var t = elapsedTime / duration;
                 source.volume = Mathf.Lerp(startVolume, targetVolume, t);
                 yield return null;
             }
@@ -109,13 +109,13 @@ namespace Yakapedia
                 source.Play();
             }
 
-            float startPitch = source.pitch;
-            float startTime = Time.time;
+            var startPitch = source.pitch;
+            var startTime = Time.time;
 
             while (Time.time - startTime < duration)
             {
-                float elapsedTime = Time.time - startTime;
-                float t = elapsedTime / duration;
+                var elapsedTime = Time.time - startTime;
+                var t = elapsedTime / duration;
                 source.pitch = Mathf.Lerp(startPitch, targetPitch, t);
                 yield return null;
             }

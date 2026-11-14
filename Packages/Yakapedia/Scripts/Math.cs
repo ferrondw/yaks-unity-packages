@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class Math
     {

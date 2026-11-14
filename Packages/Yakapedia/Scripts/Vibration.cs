@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     /// <summary>
     /// Only works on Android.

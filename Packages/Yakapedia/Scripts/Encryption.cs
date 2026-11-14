@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Yakapedia
+namespace Yakanashe.Yakapedia
 {
     public static class Encryption
     {
